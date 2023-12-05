@@ -1,5 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import AddMedico from './Components/Medico/AddMedico';
 import ListMedicos from './Components/Medico/ListMedico';
 import UpdateMedico from './Components/Medico/UpdateMedico';
@@ -22,6 +23,23 @@ import UpdateMedicamento from './Components/Medicamento/UpdateMedicamento';
 
 import AddPaciente from './Components/Paciente/AddPaciente';
 import ListPacientes from './Components/Paciente/ListPaciente';
+import ReadPaciente from './Components/Paciente/ReadPaciente';
+import UpdatePaciente from './Components/Paciente/UpdatePaciente';
+
+import AddPedido from './Components/Pedido/AddPedido';
+import ListPedidos from './Components/Pedido/ListPedido';
+import ReadPedido from './Components/Pedido/ReadPedido';
+import UpdatePedido from './Components/Pedido/UpdatePedido';
+
+import AddReceita from './Components/Receita/AddReceita';
+import ListReceitas from './Components/Receita/ListReceita';
+import ReadReceita from './Components/Receita/ReadReceita';
+import UpdateReceita from './Components/Receita/UpdateReceita';
+
+import AddItem_receita from './Components/Item_receita/AddItem_receita';
+import ListItem_receita from './Components/Item_receita/ListItem_receita';
+import ReadItem_receita from './Components/Item_receita/ReadItem_receita';
+import UpdateItem_receita from './Components/Item_receita/UpdateItem_receita';
 
 
 function App() {
@@ -52,6 +70,23 @@ return (
 
 <Route path="/addPaciente" element={<AddPaciente/>} />
 <Route path="/paciente" element={<ListPacientes/>} />
+<Route path="/readPaciente/:id" element={<ReadPaciente/>} />
+<Route path="/updatePaciente/:id" element={<UpdatePaciente/>} />
+
+<Route path="/addPedido" element={<AddPedido/>} />
+<Route path="/pedido" element={<ListPedidos/>} />
+<Route path="/readPedido/:id" element={<ReadPedido/>} />
+<Route path="/updatePedido/:id" element={<UpdatePedido/>} />
+
+<Route path="/addReceita" element={<AddReceita/>} />
+<Route path="/receita" element={<ListReceitas/>} />
+<Route path="/readReceita/:id" element={<ReadReceita/>} />
+<Route path="/updateReceita/:id" element={<UpdateReceita/>} />
+
+<Route path="/addItem_receita" element={<AddItem_receita/>} />
+<Route path="/item_receita" element={<ListItem_receita/>} />
+<Route path="/readItem_receita/:id" element={<ReadItem_receita/>} />
+<Route path="/updateItem_receita/:id" element={<UpdateItem_receita/>} />
 
 </Routes>
 </BrowserRouter>

@@ -67,7 +67,7 @@ to={`/readMedico/${medico.id}`} className="btn btn-success mx2">Ler</Link>
 <Link
 to={`/updateMedico/${medico.id}`} className="btn btn-info mx2">Editar</Link>
 <button
-onClick={()=>handleDelete(medico.id)} className="btn btndanger">Deletar</button>
+onClick={()=>handleDelete(medico.id)} className="btn btn-danger">Deletar</button>
 </td>
 </tr>
 )})

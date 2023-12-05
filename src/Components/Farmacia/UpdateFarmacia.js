@@ -59,47 +59,47 @@ function UpdateFarmacia() {
             onChange={handleChange} />
         </div>
         <div className="mb-3 mt-3">
-              <label className="form-label">Nome:</label>
-              <input
-                type="text"
-                className="form-control"
-                id="nome"
-                placeholder="Digite o nome da Farmacia"
-                name="nome" value={farmacia.nome}
-                onChange={handleChange}
-              />
-            </div>
+          <label className="form-label">Nome:</label>
+          <input
+            type="text"
+            className="form-control"
+            id="nome"
+            placeholder="Digite o nome da Farmacia"
+            name="nome" value={farmacia.nome}
+            onChange={handleChange}
+          />
+        </div>
 
-            <div className="mb-3 mt-3">
-              <label className="form-label">Contato:</label>
-              <input
-                type="text"
-                className="form-control"
-                id="contato"
-                placeholder="Informe o numero de contato"
-                name="contato" value={farmacia.contato}
-                onChange={handleChange}
-              />
-            </div>
+        <div className="mb-3 mt-3">
+          <label className="form-label">Contato:</label>
+          <input
+            type="text"
+            className="form-control"
+            id="contato"
+            placeholder="Informe o numero de contato"
+            name="contato" value={farmacia.contato}
+            onChange={handleChange}
+          />
+        </div>
 
-            <div className="mb-3">
-              <label className="form-label">Endereco:</label>
-              <select
-                className="form-select"
-                id="fk_endereco"
-                name="fk_endereco"
-                onChange={handleChange}
-              >
-                <option value="" disabled selected>
-                  Selecione o Endereco
-                </option>
-                {enderecos.map((endereco) => (
-                  <option key={endereco.id} value={endereco.id}>
-                    {endereco.rua}
-                  </option>
-                ))}
-              </select>
-            </div>
+        <div className="mb-3">
+          <label className="form-label">Endereco:</label>
+          <select
+            className="form-select"
+            id="fk_endereco"
+            name="fk_endereco"
+            onChange={handleChange}
+          >
+            <option value="" disabled selected>
+              Selecione o Endereco
+            </option>
+            {enderecos.map((endereco) => (
+              <option key={endereco.id} value={endereco.id}>
+                {endereco.rua}
+              </option>
+            ))}
+          </select>
+        </div>
         <button type="submit" className="btn btn-primary"
           onClick={handleClick}>Alterar</button>
       </form>
