@@ -24,7 +24,7 @@ const AddMedico = () => {
         }
     };
     return (
-        <div className="container">
+        <div className="quadro">
             <h2 className='w-100 d-flex justify-content-center p-3'>Adicionando
                 Medico</h2>
             <div className='row'>

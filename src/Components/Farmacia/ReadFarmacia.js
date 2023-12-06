@@ -17,11 +17,11 @@ const ReadFarmacia = () => {
             })
 
         axios.get("http://localhost:8081/endereco/")
-        .then(res => {
-            //console.log("Valor do parametro"+id);
-            console.log(res);
-            setEnderecos(res.data);
-        })
+            .then(res => {
+                //console.log("Valor do parametro"+id);
+                console.log(res);
+                setEnderecos(res.data);
+            })
             .catch(err => console.log(err))
     }, []);
 
@@ -31,33 +31,35 @@ const ReadFarmacia = () => {
     };
 
     return (
-        <div className="container">
+        <div className="quadro">
             <div className='row'>
                 <div className='col-md-12'>
                     <h1>Detalhes da Farmacia</h1>
-                    <table className="table">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nome</th>
-                                <th>Contato</th>
-                                <th>Endereco</th>
-                                <th>Data Cadastro</th>
-                                <th>Data Alteração</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>{farmacia.id}</td>
-                                <td>{farmacia.nome} </td>
-                                <td>{farmacia.contato} </td>
-                                <td>{encontrarRuaPeloId(farmacia.fk_endereco)}</td>
-                                <td>{farmacia.createdAt} </td>
-                                <td>{farmacia.updatedAt}
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div className="table-responsive"> {/* Adicionado container responsivo para limitar a largura da tabela */}
+                        <table className="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nome</th>
+                                    <th>Contato</th>
+                                    <th>Endereco</th>
+                                    <th>Data Cadastro</th>
+                                    <th>Data Alteração</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{farmacia.id}</td>
+                                    <td>{farmacia.nome} </td>
+                                    <td>{farmacia.contato} </td>
+                                    <td>{encontrarRuaPeloId(farmacia.fk_endereco)}</td>
+                                    <td>{farmacia.createdAt} </td>
+                                    <td>{farmacia.updatedAt}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

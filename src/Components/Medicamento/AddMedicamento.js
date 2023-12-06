@@ -23,7 +23,7 @@ const AddMedicamento = () => {
         }
     };
     return (
-        <div className="container">
+        <div className="quadro">
             <h2 className='w-100 d-flex justify-content-center p-3'>Adicionando
                 Medicamentos</h2>
             <div className='row'>

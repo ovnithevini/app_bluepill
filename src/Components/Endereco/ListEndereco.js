@@ -28,55 +28,57 @@ const ListEnderecos = () => {
         }
     };
     return (
-        <div className="container">
+        <div className="quadro">
             <h2 className='w-100 d-flex justify-content-center p-3'>Listando
                 Endereços</h2>
             <div className='row'>
                 <div className='col-md-12'>
-                    <p><Link to="/addEndereco" className="btn btnsuccess">Adicionar novo Endereço</Link></p>
-                    <table className="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>CEP</th>
-                                <th>Rua</th>
-                                <th>Numero</th>
-                                <th>Bairro</th>
-                                <th>Cidade</th>
-                                <th>UF</th>
-                                <th>Data Cadastro</th>
-                                <th>Data Alteração</th>
-                                <th>Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {enderecos.map((endereco) => {
-                                return (
-                                    <tr>
-                                        <td>{endereco.id}</td>
-                                        <td>{endereco.cep}</td>
-                                        <td>{endereco.rua} </td>
-                                        <td>{endereco.numero} </td>
-                                        <td>{endereco.bairro} </td>
-                                        <td>{endereco.cidade} </td>
-                                        <td>{endereco.uf} </td>
-                                        <td>{endereco.createdAt} </td>
-                                        <td>{endereco.updatedAt}
-                                        </td>
-                                        <td>
-                                            <Link
-                                                to={`/readEndereco/${endereco.id}`} className="btn btn-success mx2">Ler</Link>
-                                            <Link
-                                                to={`/updateEndereco/${endereco.id}`} className="btn btn-info mx2">Editar</Link>
-                                            <button
-                                                onClick={() => handleDelete(endereco.id)} className="btn btn-danger">Deletar</button>
-                                        </td>
-                                    </tr>
-                                )
-                            })
-                            }
-                        </tbody>
-                    </table>
+                    <p><Link to="/addEndereco" className="btn btn-success">Adicionar novo Endereço</Link></p>
+                    <div className="table-responsive"> {/* Adicionado container responsivo para limitar a largura da tabela */}
+                        <table className="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>CEP</th>
+                                    <th>Rua</th>
+                                    <th>Numero</th>
+                                    <th>Bairro</th>
+                                    <th>Cidade</th>
+                                    <th>UF</th>
+                                    <th>Data Cadastro</th>
+                                    <th>Data Alteração</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {enderecos.map((endereco) => {
+                                    return (
+                                        <tr>
+                                            <td>{endereco.id}</td>
+                                            <td>{endereco.cep}</td>
+                                            <td>{endereco.rua} </td>
+                                            <td>{endereco.numero} </td>
+                                            <td>{endereco.bairro} </td>
+                                            <td>{endereco.cidade} </td>
+                                            <td>{endereco.uf} </td>
+                                            <td>{endereco.createdAt} </td>
+                                            <td>{endereco.updatedAt}
+                                            </td>
+                                            <td>
+                                                <Link
+                                                    to={`/readEndereco/${endereco.id}`} className="btn btn-success mx2">Ler</Link>
+                                                <Link
+                                                    to={`/updateEndereco/${endereco.id}`} className="btn btn-info mx2">Editar</Link>
+                                                <button
+                                                    onClick={() => handleDelete(endereco.id)} className="btn btn-danger">Deletar</button>
+                                            </td>
+                                        </tr>
+                                    )
+                                })
+                                }
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

@@ -37,7 +37,7 @@ function UpdateEndereco() {
     }
   };
   return (
-    <div className="container">
+    <div className="quadro">
       <h1>Formulário para Editar Endereços</h1>
       <form>
 
@@ -86,10 +86,9 @@ function UpdateEndereco() {
         <button type="submit" className="btn btn-primary"
           onClick={handleClick}>Cadastrar</button>
         <br />
-        <Link to="/endereco">Listar Endereços</Link>
       </form>
-      <div className='container d-flex justify-content-center'>
-        <Link to="/">Veja todas os Endereços</Link>
+      <div className='quadro d-flex justify-content-center'>
+        <Link to="/endereco">Veja todos os Endereços</Link>
       </div>
     </div>
   )

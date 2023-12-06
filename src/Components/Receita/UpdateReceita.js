@@ -55,7 +55,7 @@ function UpdateReceita() {
     }
   };
   return (
-    <div className="container">
+    <div className="quadro">
       <h1>Formulário para Editar as Receitas</h1>
       <form>
         <div className="mb-3 mt-3">
@@ -144,7 +144,7 @@ function UpdateReceita() {
         <button type="submit" className="btn btn-primary"
           onClick={handleClick}>Alterar</button>
       </form>
-      <div className='container d-flex justify-content-center'>
+      <div className='quadro d-flex justify-content-center'>
         <Link to="/receita">Veja todas as Receitas</Link>
       </div>
     </div>

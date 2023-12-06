@@ -48,7 +48,7 @@ const AddReceita = () => {
   };
 
   return (
-    <div className="container">
+    <div className="quadro">
       <h2 className="w-100 d-flex justify-content-center p-3">Adicionando Receita</h2>
       <div className="row">
         <div className="col-md-12">

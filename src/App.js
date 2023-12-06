@@ -41,6 +41,8 @@ import ListItem_receita from './Components/Item_receita/ListItem_receita';
 import ReadItem_receita from './Components/Item_receita/ReadItem_receita';
 import UpdateItem_receita from './Components/Item_receita/UpdateItem_receita';
 
+import Home from './Components/Home/Home';
+
 
 function App() {
 return (
@@ -48,6 +50,9 @@ return (
 <header className="App-header">
 <BrowserRouter>
 <Routes>
+
+<Route exact path='/' element={<Home/>} />
+
 <Route path="/medico" element={<ListMedicos/>} />
 <Route path="/addMedico" element={<AddMedico/>} />
 <Route path="/readMedico/:id" element={<ReadMedico/>} />

@@ -44,7 +44,7 @@ const AddPaciente = () => {
   };
 
   return (
-    <div className="container">
+    <div className="quadro">
       <h2 className="w-100 d-flex justify-content-center p-3">Cadastro de Pacientes</h2>
       <div className="row">
         <div className="col-md-12">

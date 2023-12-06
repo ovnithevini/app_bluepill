@@ -18,18 +18,18 @@ const ReadItem_receita = () => {
             })
 
         axios.get("http://localhost:8081/medicamento/")
-        .then(res => {
-            //console.log("Valor do parametro"+id);
-            console.log(res);
-            setMedicamentos(res.data);
-        })
+            .then(res => {
+                //console.log("Valor do parametro"+id);
+                console.log(res);
+                setMedicamentos(res.data);
+            })
 
         axios.get("http://localhost:8081/receita/")
-        .then(res => {
-            //console.log("Valor do parametro"+id);
-            console.log(res);
-            setReceitas(res.data);
-        })
+            .then(res => {
+                //console.log("Valor do parametro"+id);
+                console.log(res);
+                setReceitas(res.data);
+            })
 
             .catch(err => console.log(err))
     }, []);
@@ -37,42 +37,44 @@ const ReadItem_receita = () => {
     const encontrarNomePeloId = (id) => {
         const medicamentoEncontrado = medicamentos.find((medicamento) => medicamento.id === id);
         return medicamentoEncontrado ? medicamentoEncontrado.nome : 'Medicamento não encontrado';
-        };
+    };
 
     const encontrarReceitaPeloId = (id) => {
         const receitaEncontrado = receitas.find((receita) => receita.id === id);
         return receitaEncontrado ? receitaEncontrado.diagnostico : 'Receita não encontrada';
-        };
+    };
 
     return (
-        <div className="container">
+        <div className="quadro">
             <div className='row'>
                 <div className='col-md-12'>
                     <h1>Detalhes do Item</h1>
-                    <table className="table">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Instruções</th>
-                                <th>Quantidade</th>
-                                <th>Receita</th>
-                                <th>Medicamento</th>
-                                <th>Data Cadastro</th>
-                                <th>Data Alteração</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>{item_receita.id}</td>
-                                <td>{item_receita.instrucoes} </td>
-                                <td>{item_receita.quantidade} </td>
-                                <td>{encontrarReceitaPeloId(item_receita.fk_receita)} </td>
-                                <td>{encontrarNomePeloId(item_receita.fk_medicamento)} </td>
-                                <td>{item_receita.createdAt} </td>
-                                <td>{item_receita.updatedAt} </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div className="table-responsive"> {/* Adicionado container responsivo para limitar a largura da tabela */}
+                        <table className="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Instruções</th>
+                                    <th>Quantidade</th>
+                                    <th>Receita</th>
+                                    <th>Medicamento</th>
+                                    <th>Data Cadastro</th>
+                                    <th>Data Alteração</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{item_receita.id}</td>
+                                    <td>{item_receita.instrucoes} </td>
+                                    <td>{item_receita.quantidade} </td>
+                                    <td>{encontrarReceitaPeloId(item_receita.fk_receita)} </td>
+                                    <td>{encontrarNomePeloId(item_receita.fk_medicamento)} </td>
+                                    <td>{item_receita.createdAt} </td>
+                                    <td>{item_receita.updatedAt} </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

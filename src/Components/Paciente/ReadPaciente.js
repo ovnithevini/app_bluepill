@@ -16,11 +16,11 @@ const ReadPaciente = () => {
             })
 
         axios.get("http://localhost:8081/endereco/")
-        .then(res => {
-            //console.log("Valor do parametro"+id);
-            console.log(res);
-            setEnderecos(res.data);
-        })
+            .then(res => {
+                //console.log("Valor do parametro"+id);
+                console.log(res);
+                setEnderecos(res.data);
+            })
 
             .catch(err => console.log(err))
     }, []);
@@ -32,36 +32,38 @@ const ReadPaciente = () => {
 
 
     return (
-        <div className="container">
+        <div className="quadro">
             <div className='row'>
                 <div className='col-md-12'>
                     <h1>Detalhes do Paciente</h1>
-                    <table className="table">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nome</th>
-                                <th>Sobrenome</th>
-                                <th>dataNascimento</th>
-                                <th>Contato</th>
-                                <th>Endereço</th>
-                                <th>Data Cadastro</th>
-                                <th>Data Alteração</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>{paciente.id}</td>
-                                <td>{paciente.nome} </td>
-                                <td>{paciente.sobrenome} </td>
-                                <td>{paciente.dataNascimento} </td>
-                                <td>{paciente.contato} </td>
-                                <td>{encontrarRuaPeloId(paciente.fk_endereco)}</td>
-                                <td>{paciente.createdAt} </td>
-                                <td>{paciente.updatedAt} </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div className="table-responsive"> {/* Adicionado container responsivo para limitar a largura da tabela */}
+                        <table className="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nome</th>
+                                    <th>Sobrenome</th>
+                                    <th>dataNascimento</th>
+                                    <th>Contato</th>
+                                    <th>Endereço</th>
+                                    <th>Data Cadastro</th>
+                                    <th>Data Alteração</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{paciente.id}</td>
+                                    <td>{paciente.nome} </td>
+                                    <td>{paciente.sobrenome} </td>
+                                    <td>{paciente.dataNascimento} </td>
+                                    <td>{paciente.contato} </td>
+                                    <td>{encontrarRuaPeloId(paciente.fk_endereco)}</td>
+                                    <td>{paciente.createdAt} </td>
+                                    <td>{paciente.updatedAt} </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

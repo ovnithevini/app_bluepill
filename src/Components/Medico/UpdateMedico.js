@@ -36,7 +36,7 @@ function UpdateMedico() {
         }
     };
     return (
-        <div className="container">
+        <div className="quadro">
             <h1>Formulário para Editar a Medico</h1>
             <form>
 
@@ -88,10 +88,10 @@ function UpdateMedico() {
                 <button type="submit" className="btn btn-primary"
                     onClick={handleClick}>Cadastrar</button>
                 <br />
-                <Link to="/medico">Listar Medicos</Link>
+              
             </form>
-            <div className='container d-flex justify-content-center'>
-                <Link to="/">Veja todas os medicos</Link>
+            <div className='quadro d-flex justify-content-center'>
+                <Link to="/medico">Veja todos os medicos</Link>
             </div>
         </div>
     )
